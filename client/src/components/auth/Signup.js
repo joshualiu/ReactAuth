@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
 class Signup extends Component {
+  // writing arrow function to prevent using bind(this)
+  onSubmit = (formProps) => {
+    console.log(formProps)
+  }
   render() {
+    const { handleSubmit } = this.props;
     return (
-      <form>
+      <form onSubmit={ handleSubmit(this.onSubmit)}>
         <fieldset>
           <label>Email</label>
           <Field 
@@ -22,6 +27,7 @@ class Signup extends Component {
             autoComplete="none"
           />
         </fieldset>
+        <button>Sign Up</button>
       </form>
     )
   }
