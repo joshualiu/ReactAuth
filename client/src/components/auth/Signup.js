@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { reduxForm, Field } from 'redux-form';
+import { connect } from 'react-redux';
+import * as actions from "../../actions";
 class Signup extends Component {
   // writing arrow function to prevent using bind(this)
   onSubmit = (formProps) => {
